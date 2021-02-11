@@ -29,18 +29,18 @@ class TestCabHailingService(TestCase):
         cab_id_mapping_second_user = self.user_cab_manager.book_my_cab(2, 0, 0)
         self.assertEqual(cab_id_mapping_second_user, 3)
 
-        cab_id_mapping_second_user = self.user_cab_manager.book_my_cab(3, 0, 0)
-        self.assertEqual(cab_id_mapping_second_user, 2)
+        cab_id_mapping_third_user = self.user_cab_manager.book_my_cab(3, 0, 0)
+        self.assertEqual(cab_id_mapping_third_user, 2)
 
-        cab_id_mapping_second_user = self.user_cab_manager.book_my_cab(4, 0, 0)
-        self.assertEqual(cab_id_mapping_second_user, 5)
+        cab_id_mapping_fourth_user = self.user_cab_manager.book_my_cab(4, 0, 0)
+        self.assertEqual(cab_id_mapping_fourth_user, 5)
 
-        cab_id_mapping_second_user = self.user_cab_manager.book_my_cab(5, 0, 0)
-        self.assertEqual(cab_id_mapping_second_user, 4)
+        cab_id_mapping_fifth_user = self.user_cab_manager.book_my_cab(5, 0, 0)
+        self.assertEqual(cab_id_mapping_fifth_user, 4)
 
         # Currently there are no cabs available , so it return None
-        cab_id_mapping_third_user = self.user_cab_manager.book_my_cab(6, 2, 2)
-        self.assertEqual(cab_id_mapping_third_user, None)
+        cab_id_mapping_sixth_user = self.user_cab_manager.book_my_cab(6, 2, 2)
+        self.assertEqual(cab_id_mapping_sixth_user, None)
 
     def test_user_cab_details(self):
         active_users = len(self.user_cab_manager.get_active_users())
